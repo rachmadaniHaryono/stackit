@@ -1,0 +1,12 @@
+language: python
+
+python:
+  - "3.5"
+install:
+  - "pip3 install -r ./requirements-dev.txt"
+  - "pip3 -e ."
+script:
+ #- "python -m flake8 ./stackit"
+ - "python -m pytest -v ./tests/ --cov=stackit"
+after_success:
+  #- bash <(curl -s https://codecov.io/bash)
